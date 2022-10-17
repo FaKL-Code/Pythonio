@@ -1,8 +1,10 @@
-try:
-    with open('dados/contatos.csv') as file:
+import contatos_utils
 
-        for linha in file:
-            print(linha)
+try:
+    contatos = contatos_utils.csv_contatos('contatos')
+    
+    for contato in contatos:
+        print(f'{contato.id} - {contato.nome} - {contato.email}')
 except FileNotFoundError:
     print('arquivo nao encontrado')
 except PermissionError:
