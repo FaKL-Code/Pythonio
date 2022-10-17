@@ -1,11 +1,9 @@
 try:
-    file = open('dados/contatos.csv')
+    with open('dados/contatos.csv') as file:
 
-    for linha in file:
-        print(linha)
+        for linha in file:
+            print(linha)
 except FileNotFoundError:
     print('arquivo nao encontrado')
 except PermissionError:
     print('Sem permissao para escrever no diretorio')
-finally:
-    file.close()
