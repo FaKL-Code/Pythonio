@@ -1,6 +1,8 @@
-file = open('dados/contatos.csv')
+try:
+    file = open('dados/contatos.csv')
 
-for linha in file:
-    print(linha)
-    
-file.close()
+    for linha in file:
+        print(linha)
+
+finally:
+    file.close()
